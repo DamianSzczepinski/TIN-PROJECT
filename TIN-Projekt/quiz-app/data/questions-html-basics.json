@@ -1,0 +1,52 @@
+[
+    {
+      "text": "Która deklaracja otwiera dokument HTML5?",
+      "answers": ["<!DOCTYPE html>", "<html>", "<meta charset=\"UTF-8\">", "<header>"],
+      "correct": 0
+    },
+    {
+      "text": "Element <strong> jest…",
+      "answers": ["blokowy", "liniowy", "pusty (void)", "zdeprecjonowany"],
+      "correct": 1
+    },
+    {
+      "text": "Który znacznik tworzy nieuporządkowaną listę?",
+      "answers": ["<ol>", "<ul>", "<li>", "<dl>"],
+      "correct": 1
+    },
+    {
+      "text": "Jakiego atrybutu używasz do podania adresu w elemencie <a>?",
+      "answers": ["href", "src", "id", "name"],
+      "correct": 0
+    },
+    {
+      "text": "Który z poniższych elementów jest semantyczny?",
+      "answers": ["<div>", "<span>", "<article>", "<br>"],
+      "correct": 2
+    },
+    {
+      "text": "Jaki atrybut nadajesz obrazkowi, aby opisać go tekstem alternatywnym?",
+      "answers": ["title", "alt", "src", "longdesc"],
+      "correct": 1
+    },
+    {
+      "text": "Który znacznik odpowiada za wiersz tabeli?",
+      "answers": ["<tr>", "<td>", "<th>", "<table>"],
+      "correct": 0
+    },
+    {
+      "text": "Jak osadzasz zewnętrzny plik JavaScript w HTML?",
+      "answers": ["<script href=\"app.js\">", "<script src=\"app.js\"></script>", "<js src=\"app.js\">", "<link rel=\"script\" href=\"app.js\">"],
+      "correct": 1
+    },
+    {
+      "text": "Ile poziomów nagłówków (h1–h?) definiuje HTML?",
+      "answers": ["3", "5", "6", "8"],
+      "correct": 2
+    },
+    {
+      "text": "Który element wstawia pojedyncze przełamanie linii?",
+      "answers": ["<hr>", "<p>", "<li>", "<br>"],
+      "correct": 3
+    }
+  ]

@@ -1,0 +1,102 @@
+[
+    {
+      "text": "Selektor \".nav ul > li\" wybiera…",
+      "answers": [
+        "wszystkie elementy li w nav (dowolnej głębokości)",
+        "tylko pierwsze li w nav",
+        "li będące bezpośrednimi dziećmi ul wewnątrz .nav",
+        "li wewnątrz każdego ul na stronie"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Co oznacza selektor \"a[href^='https']\"?",
+      "answers": [
+        "linki z protokołem https",
+        "linki zawierające „https” gdziekolwiek w URL",
+        "linki kończące się na https",
+        "wszystkie linki z atrybutem href"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Pseudoklasa \":nth-child(2n)\" wybierze…",
+      "answers": [
+        "co drugi element (parzyste)",
+        "drugi element",
+        "pierwsze dwa elementy",
+        "ostatni element"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Jak zaznaczyć <input> w stanie zaznaczonym (checkbox/radio)?",
+      "answers": [":selected", ":checked", ":valid", ":active"],
+      "correct": 1
+    },
+    {
+      "text": "Który selektor ma największą specyficzność?",
+      "answers": [
+        "div.content p",
+        ".content p",
+        "#content p",
+        "* p"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Co robi selektor \":root\"?",
+      "answers": [
+        "zaznacza najwyższy element w drzewie (html)",
+        "zaznacza ciało dokumentu (body)",
+        "zaznacza div#root",
+        "używa zmiennych CSS"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Jak wybrać elementy nieposiadające klasy \"active\"?",
+      "answers": [
+        ".active:not(*)",
+        ":not(.active)",
+        "* !.active",
+        ".*:not(active)"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Selektor \"h1 + p\" to…",
+      "answers": [
+        "sąsiedni selektor braci (adjacent)",
+        "selektor potomka",
+        "selektor rodzica",
+        "pseudo‑element"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Którego pseudo‑elementu użyjesz, by wstawić zawartość przed element?",
+      "answers": ["::before", "::after", ":first-line", ":first-letter"],
+      "correct": 0
+    },
+    {
+      "text": "Jaka jest specyficzność selektora \"ul li.active a\"?",
+      "answers": ["0,0,3,1", "0,1,2,0", "0,1,1,1", "1,0,0,0"],
+      "correct": 2
+    },
+    {
+      "text": "Co oznacza \"[type='text']\"?",
+      "answers": [
+        "elementy z atrybutem type=\"text\"",
+        "elementy zawierające tekst",
+        "tekstowe typy plików",
+        "wszystkie inputy"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Który zapis jest poprawny dla pseudo‑elementu pierwszej litery?",
+      "answers": ["p::first-letter", "p:first-letter", "::p first-letter", "p:first_letter"],
+      "correct": 0
+    }
+  ]

@@ -1,0 +1,112 @@
+[
+    {
+      "text": "Jakiego słowa kluczowego używasz do deklaracji zmiennej o zasięgu blokowym?",
+      "answers": ["var", "let", "const", "static"],
+      "correct": 1
+    },
+    {
+      "text": "Co zwróci wyrażenie `typeof NaN`?",
+      "answers": ["'number'", "'NaN'", "'undefined'", "'object'"],
+      "correct": 0
+    },
+    {
+      "text": "Jak sprawdzić, czy zmienna `x` jest tablicą?",
+      "answers": [
+        "x instanceof Array",
+        "typeof x === 'array'",
+        "Array.isArray(x)",
+        "x.constructor === 'Array'"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Czym różni się `==` od `===`?",
+      "answers": [
+        "`==` porównuje wartości z konwersją typów, `===` porównuje również typ",
+        "oba są identyczne",
+        "`===` wykonuje konwersję, `==` nie",
+        "`==` porównuje tylko liczby"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Co zrobi metoda `array.push(42)`?",
+      "answers": [
+        "doda element na początek tablicy",
+        "doda element na koniec tablicy i zwróci nową długość",
+        "zwróci ostatni element",
+        "usunie pierwszy element"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Jakiego typu jest `null` według `typeof`?",
+      "answers": ["'null'", "'object'", "'undefined'", "'boolean'"],
+      "correct": 1
+    },
+    {
+      "text": "Która metoda kopiuje płytko właściwości do obiektu docelowego?",
+      "answers": ["Object.assign()", "Object.copy()", "Object.merge()", "Object.clone()"],
+      "correct": 0
+    },
+    {
+      "text": "Jak zadeklarować funkcję strzałkową?",
+      "answers": [
+        "function => () {}",
+        "() => {}",
+        "=> function() {}",
+        "lambda () {}"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Czym jest `this` w funkcji wywołanej jako metoda obiektu?",
+      "answers": [
+        "globalThis",
+        "undefined",
+        "obiekt, przed którym stoi kropka",
+        "instancja klasy Object"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Jak zatrzymać propagację eventu w DOM?",
+      "answers": [
+        "event.preventDefault()",
+        "event.stopPropagation()",
+        "return false",
+        "event.cancel()"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Który typ danych jest niemutowalny?",
+      "answers": ["Array", "Object", "String", "Set"],
+      "correct": 2
+    },
+    {
+      "text": "Kiedy `Promise` przechodzi do stanu „rejected”?",
+      "answers": [
+        "gdy wywołamy `resolve()`",
+        "gdy wywołamy `reject()` lub rzucimy wyjątek",
+        "po 5 sekundach",
+        "nigdy"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Operator `...` w wyrażeniu `[...arr]` to…",
+      "answers": ["operator rest", "operator spread", "destrukturyzacja", "template literal"],
+      "correct": 1
+    },
+    {
+      "text": "Co zwróci `Boolean([])`?",
+      "answers": ["false", "true", "undefined", "błąd"],
+      "correct": 1
+    },
+    {
+      "text": "Jak nazywa się prototypowy łańcuch obiektów w JavaScripcie?",
+      "answers": ["scope chain", "prototype chain", "event loop", "callback queue"],
+      "correct": 1
+    }
+  ]

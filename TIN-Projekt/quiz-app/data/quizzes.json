@@ -1,0 +1,20 @@
+[
+    {
+      "id": "html-basics",
+      "title": "HTML Basics",
+      "description": "Podstawowe pytania o HTML.",
+      "questionCount": 10
+    },
+    {
+      "id": "css-selectors",
+      "title": "CSS Selectors",
+      "description": "Sprawdź, jak dobrze znasz selektory CSS.",
+      "questionCount": 12
+    },
+    {
+      "id": "js-fundamentals",
+      "title": "JavaScript Fundamentals",
+      "description": "Zmienne, funkcje, scope…",
+      "questionCount": 15
+    }
+  ]
