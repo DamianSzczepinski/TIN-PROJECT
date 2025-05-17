@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiz • Quiz App</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz • Quiz App</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 
-  <body class="min-h-screen flex flex-col bg-gray-50 text-gray-900">
-    <header class="py-4 text-center bg-white shadow-sm">
-      <h1 id="quiz-title" class="text-2xl font-semibold"></h1>
-    </header>
+<body class="min-h-screen flex flex-col bg-gray-50 text-gray-900">
 
-    <main
-      id="quiz-container"
-      class="flex-grow flex flex-col items-center justify-start p-6 max-w-xl mx-auto"
-    >
-      <div id="progress" class="self-end mb-2 text-sm text-gray-500"></div>
-      <h2 id="question" class="text-xl font-semibold mb-6 text-center"></h2>
-      <ul id="answers" class="space-y-4 w-full"></ul>
-    </main>
+  <header class="py-4 text-center bg-white shadow-sm">
+    <h1 id="quiz-title" class="text-2xl font-semibold"></h1>
+  </header>
 
-    <script type="module" src="js/quiz.js"></script>
-  </body>
+  <main id="quiz-container"
+    class="flex-grow flex flex-col items-center justify-start p-6 max-w-xl mx-auto">
+
+    <!-- PROGRESS-BAR czasu  -->
+    <div class="w-full h-2 bg-gray-200 rounded-full mb-4 overflow-hidden">
+      <div id="time-bar"
+           class="h-full bg-red-500 transition-all duration-100"></div>
+    </div>
+
+    <!-- licznik x/total + timer liczbowy -->
+    <div id="progress"
+      class="self-end mb-2 text-sm text-gray-500 flex items-center gap-2">
+      <span id="progress-text"></span>
+      <span id="timer" class="text-red-500 font-medium"></span>
+    </div>
+
+    <h2 id="question" class="text-xl font-semibold mb-6 text-center"></h2>
+    <ul id="answers" class="space-y-4 w-full"></ul>
+  </main>
+
+  <footer class="py-4 text-center text-xs text-gray-400">
+    © 2025 Quiz App — PJATK Gdańsk
+  </footer>
+
+  <script type="module" src="js/quiz.js"></script>
+</body>
 </html>

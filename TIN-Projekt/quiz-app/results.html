@@ -1,91 +1,69 @@
 <!DOCTYPE html>
 <html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wynik • Quiz App</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wynik • Quiz App</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 
-  <body class="min-h-screen flex flex-col bg-gray-50 text-gray-900">
-    <header class="py-6 text-center bg-white shadow-sm">
-      <h1 class="text-3xl font-bold tracking-tight">Wynik Quizu</h1>
-    </header>
+<body class="min-h-screen flex flex-col bg-gray-50 text-gray-900">
 
-    <main
-      class="flex-grow flex flex-col items-center justify-center p-6 text-center"
-    >
-      <h2 id="quiz-title" class="text-2xl font-semibold mb-2"></h2>
-      <p id="score" class="text-xl mb-6"></p>
+  <header class="py-4 text-center bg-white shadow-sm">
+    <h1 class="text-2xl font-semibold">Wynik Quizu</h1>
+  </header>
 
-      <section class="w-full max-w-md">
-        <h3 class="text-lg font-medium mb-3">Twoje poprzednie wyniki</h3>
-        <ul
-          id="history"
-          class="space-y-2 text-sm bg-white border rounded-lg p-4 shadow-sm"
-        ></ul>
-      </section>
+  <main class="flex-grow flex flex-col items-center justify-center p-6 text-center">
+    <h2 id="quiz-title" class="text-2xl font-semibold mb-2"></h2>
+    <p id="score" class="text-xl mb-6"></p>
 
-      <button
-        id="btn-home"
-        class="mt-8 inline-block px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700"
-      >
-        Powrót do listy quizów
-      </button>
-    </main>
+    <section class="w-full max-w-md">
+      <h3 class="text-lg font-medium mb-3">Twoje poprzednie wyniki</h3>
+      <ul id="history"
+        class="space-y-2 text-sm bg-white border rounded-lg p-4 shadow-sm"></ul>
+    </section>
 
-    <footer class="py-4 text-center text-xs text-gray-400">
-      © 2025&nbsp;Quiz App — PJATK&nbsp;Gdańsk
-    </footer>
+    <button id="btn-home"
+      class="mt-8 inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700
+             text-white rounded-lg shadow transition">
+      Powrót do listy quizów
+    </button>
+  </main>
 
-    <script type="module">
-      import { getResults } from './js/storage.js';
+  <footer class="py-4 text-center text-xs text-gray-400">
+    © 2025 Quiz App — PJATK Gdańsk
+  </footer>
 
-      const params = new URLSearchParams(location.search);
-      const quizId = params.get('id');
-      const score = +params.get('score');
-      const total = +params.get('total');
+  <script type="module">
+    import { getResults } from './js/storage.js';
 
-      /* tytuł quizu */
-      const meta = await fetch('./data/quizzes.json').then((r) => r.json());
-      const thisQuiz = meta.find((q) => q.id === quizId) || {
-        title: 'Nieznany quiz'
-      };
-      document.getElementById('quiz-title').textContent = thisQuiz.title;
+    const p     = new URLSearchParams(location.search);
+    const id    = p.get('id');
+    const score = +p.get('score');
+    const total = +p.get('total');
 
-      /* wynik */
-      document.getElementById(
-        'score'
-      ).textContent = `Twój wynik: ${score} / ${total}  (${Math.round(
-        (score / total) * 100
-      )}%)`;
+    const meta  = await fetch('./data/quizzes.json').then(r => r.json());
+    const quiz  = meta.find(q => q.id === id) ?? { title: 'Nieznany' };
+    document.getElementById('quiz-title').textContent = quiz.title;
+    document.getElementById('score').textContent =
+      `Twój wynik: ${score} / ${total} (${Math.round(score/total*100)}%)`;
 
-      /* historia */
-      const history = getResults()
-        .filter((r) => r.quizId === quizId)
-        .reverse()
-        .slice(0, 10);
+    const hist = getResults().filter(r => r.quizId === id).reverse().slice(0, 10);
+    const ul   = document.getElementById('history');
+    if (!hist.length) {
+      ul.innerHTML = '<li class="text-gray-500">Brak wcześniejszych wyników.</li>';
+    } else {
+      hist.forEach(h => {
+        const li = document.createElement('li');
+        li.textContent =
+          `${new Date(h.date).toLocaleString()} — ${h.score}/${h.total} (${Math.round(h.score/h.total*100)}%)`;
+        ul.appendChild(li);
+      });
+    }
 
-      const ul = document.getElementById('history');
-      if (history.length === 0) {
-        ul.innerHTML =
-          '<li class="text-gray-500">Nie masz jeszcze wcześniejszych wyników.</li>';
-      } else {
-        history.forEach((h) => {
-          const li = document.createElement('li');
-          const date = new Date(h.date).toLocaleString();
-          li.textContent = `${date} — ${h.score}/${h.total} (${Math.round(
-            (h.score / h.total) * 100
-          )}%)`;
-          ul.appendChild(li);
-        });
-      }
-
-      document
-        .getElementById('btn-home')
-        .addEventListener('click', () => (location.href = 'index.html'));
-    </script>
-  </body>
+    document.getElementById('btn-home').onclick = () => location.href = 'index.html';
+  </script>
+</body>
 </html>
