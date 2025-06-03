@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiz App</title>
 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: { extend: { fontFamily: { sans: ['Poppins','sans-serif'] } } }
+    }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -13,13 +19,10 @@
 
   <header class="py-6 text-center bg-white shadow-sm">
     <h1 class="text-3xl font-bold tracking-tight">Quiz&nbsp;App</h1>
-    <p class="text-sm text-gray-500 mt-1">
-      Wybierz quiz i&nbsp;sprawdź swoją wiedzę!
-    </p>
+    <p class="text-sm text-gray-500 mt-1">Wybierz quiz i&nbsp;sprawdź swoją wiedzę!</p>
   </header>
 
-  <main id="quiz-list"
-    class="grid gap-4 p-6 sm:grid-cols-2 xl:grid-cols-3 flex-grow"></main>
+  <main id="quiz-list" class="grid gap-4 p-6 sm:grid-cols-2 xl:grid-cols-3 flex-grow"></main>
 
   <footer class="py-4 text-center text-xs text-gray-400">
     © 2025 Quiz App — PJATK Gdańsk

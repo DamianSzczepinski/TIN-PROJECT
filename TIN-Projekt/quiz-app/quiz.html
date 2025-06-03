@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiz • Quiz App</title>
 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: { extend: { fontFamily: { sans: ['Poppins','sans-serif'] } } }
+    }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -15,18 +21,12 @@
     <h1 id="quiz-title" class="text-2xl font-semibold"></h1>
   </header>
 
-  <main id="quiz-container"
-    class="flex-grow flex flex-col items-center justify-start p-6 max-w-xl mx-auto">
-
-    <!-- PROGRESS-BAR czasu  -->
+  <main id="quiz-container" class="flex-grow flex flex-col items-center justify-start p-6 max-w-xl mx-auto">
     <div class="w-full h-2 bg-gray-200 rounded-full mb-4 overflow-hidden">
-      <div id="time-bar"
-           class="h-full bg-red-500 transition-all duration-100"></div>
+      <div id="time-bar" class="h-full transition-all duration-100" style="background:linear-gradient(90deg,#22c55e 0%,#ef4444 100%);"></div>
     </div>
 
-    <!-- licznik x/total + timer liczbowy -->
-    <div id="progress"
-      class="self-end mb-2 text-sm text-gray-500 flex items-center gap-2">
+    <div id="progress" class="self-end mb-2 text-sm text-gray-500 flex items-center gap-2">
       <span id="progress-text"></span>
       <span id="timer" class="text-red-500 font-medium"></span>
     </div>

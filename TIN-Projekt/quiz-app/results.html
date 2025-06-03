@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wynik • Quiz App</title>
 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: { extend: { fontFamily: { sans: ['Poppins','sans-serif'] } } }
+    }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -21,13 +27,10 @@
 
     <section class="w-full max-w-md">
       <h3 class="text-lg font-medium mb-3">Twoje poprzednie wyniki</h3>
-      <ul id="history"
-        class="space-y-2 text-sm bg-white border rounded-lg p-4 shadow-sm"></ul>
+      <ul id="history" class="space-y-2 text-sm bg-white border rounded-lg p-4 shadow-sm"></ul>
     </section>
 
-    <button id="btn-home"
-      class="mt-8 inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700
-             text-white rounded-lg shadow transition">
+    <button id="btn-home" class="mt-8 inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow transition">
       Powrót do listy quizów
     </button>
   </main>
@@ -38,32 +41,21 @@
 
   <script type="module">
     import { getResults } from './js/storage.js';
-
-    const p     = new URLSearchParams(location.search);
-    const id    = p.get('id');
-    const score = +p.get('score');
-    const total = +p.get('total');
-
-    const meta  = await fetch('./data/quizzes.json').then(r => r.json());
-    const quiz  = meta.find(q => q.id === id) ?? { title: 'Nieznany' };
+    const p = new URLSearchParams(location.search);
+    const id = p.get('id'); const score = +p.get('score'); const total = +p.get('total');
+    const meta = await fetch('./data/quizzes.json').then(r=>r.json());
+    const quiz = meta.find(q=>q.id===id) ?? {title:'Nieznany'};
     document.getElementById('quiz-title').textContent = quiz.title;
-    document.getElementById('score').textContent =
-      `Twój wynik: ${score} / ${total} (${Math.round(score/total*100)}%)`;
-
-    const hist = getResults().filter(r => r.quizId === id).reverse().slice(0, 10);
-    const ul   = document.getElementById('history');
-    if (!hist.length) {
-      ul.innerHTML = '<li class="text-gray-500">Brak wcześniejszych wyników.</li>';
-    } else {
-      hist.forEach(h => {
-        const li = document.createElement('li');
-        li.textContent =
-          `${new Date(h.date).toLocaleString()} — ${h.score}/${h.total} (${Math.round(h.score/h.total*100)}%)`;
-        ul.appendChild(li);
-      });
-    }
-
-    document.getElementById('btn-home').onclick = () => location.href = 'index.html';
+    document.getElementById('score').textContent = `Twój wynik: ${score} / ${total} (${Math.round(score/total*100)}%)`;
+    const hist = getResults().filter(r=>r.quizId===id).reverse().slice(0,10);
+    const ul = document.getElementById('history');
+    if(!hist.length) ul.innerHTML='<li class="text-gray-500">Brak wcześniejszych wyników.</li>';
+    else hist.forEach(h=>{
+      const li=document.createElement('li');
+      li.textContent=`${new Date(h.date).toLocaleString()} — ${h.score}/${h.total} (${Math.round(h.score/h.total*100)}%)`;
+      ul.appendChild(li);
+    });
+    document.getElementById('btn-home').onclick=()=>location.href='index.html';
   </script>
 </body>
 </html>

@@ -1,0 +1,14 @@
+[
+    { "text": "Wartość domyślna właściwości display?", "answers": ["block", "flex", "grid", "inline"], "correct": 0 },
+    { "text": "Która oś Flexboxa to „main axis”?", "answers": ["pozioma", "pionowa", "zależna od flex-direction", "zawsze lewa-prawa"], "correct": 2 },
+    { "text": "Jednostka fr w CSS Grid oznacza…", "answers": ["ułamek wolnej przestrzeni", "piksele", "% kontenera", "viewport"], "correct": 0 },
+    { "text": "Jak wyrównać elementy flex na cross-axis?", "answers": ["justify-content", "align-items", "align-content", "place-items"], "correct": 1 },
+    { "text": "Która właściwość łączy grid-row i grid-column?", "answers": ["grid-area", "grid-template", "grid-place", "grid-span"], "correct": 0 },
+    { "text": "flex: 1 0 200px; – co oznacza 0?", "answers": ["order", "basis", "grow", "shrink"], "correct": 3 },
+    { "text": "repeat(auto-fit, minmax(200px,1fr)) – auto-fit robi…", "answers": ["liczy tyle kolumn, ile zmieści", "przycina nadmiar", "ustawia gap", "ignoruje minmax"], "correct": 0 },
+    { "text": "Które property usuwa domyślne odstępy między kolumnami Grid?", "answers": ["column-gap: 0", "gap: 0", "grid-gap: none", "row-gap: 0"], "correct": 1 },
+    { "text": "Aby odwrócić kolejność elementów flex…", "answers": ["order: -1", "flex-direction: row-reverse", "align-content: end", "justify-items: flex-end"], "correct": 1 },
+    { "text": "Jak ustawić odstęp między wierszami i kolumnami Grid jednym skrótem?", "answers": ["gap", "grid-gap", "row-column-gap", "spacing"], "correct": 0 },
+    { "text": "place-items to skrót dla…", "answers": ["align-items & justify-items", "align-content & gap", "order & flex-basis", "grid-area"], "correct": 0 },
+    { "text": "Które z poniższych NIE jest wartością justify-content?", "answers": ["space-evenly", "center", "baseline", "space-between"], "correct": 2 }
+  ]

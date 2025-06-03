@@ -1,0 +1,17 @@
+[
+    { "text": "Które słowo kluczowe tworzy zmienną niemutowalną (referencja)?", "answers": ["var", "let", "const", "static"], "correct": 2 },
+    { "text": "Operator rozproszenia w tablicy to…", "answers": ["...", "@", "*", "&"], "correct": 0 },
+    { "text": "`(()=>{})()` jest przykładem…", "answers": ["IIFE z funkcją strzałkową", "callback hell", "generatora", "deklaracji klasy"], "correct": 0 },
+    { "text": "Jak zaimportować domyślny export?", "answers": ["import {foo} from 'mod';", "import foo from 'mod';", "require('mod')", "import * as foo from 'mod';"], "correct": 1 },
+    { "text": "`[a,...rest] = [1,2,3]` – wartość rest?", "answers": ["[1]", "[2,3]", "2", "1"], "correct": 1 },
+    { "text": "Template literal zaczyna się znakiem…", "answers": ["\"", "'", "`", "~"], "correct": 2 },
+    { "text": "Promise w stanie „fulfilled” wywoła…", "answers": ["catch", "finally", "then", "resolve"], "correct": 2 },
+    { "text": "Domyślny parametr funkcji: `function f(x=5){}` – x ma 5 gdy…", "answers": ["x === undefined", "x === null", "x == 0", "zawsze"], "correct": 0 },
+    { "text": "Która metoda zamienia NodeList na tablicę?", "answers": ["Array.of()", "Array.from()", "Object.assign()", "spread ..."], "correct": 1 },
+    { "text": "Symbol.iterator służy do…", "answers": ["iteracji po obiekcie", "trigger eventu", "tworzenia klasy", "porównania typów"], "correct": 0 },
+    { "text": "let {a,b} = obj; – to przykład…", "answers": ["destrukturyzacji obiektu", "hoistingu", "currying", "memoizacji"], "correct": 0 },
+    { "text": "`class Cat extends Animal {}` – słowo extends dodaje…", "answers": ["mixin", "dziedziczenie prototypowe", "import modułu", "scope chain"], "correct": 1 },
+    { "text": "`Number.isNaN(NaN)` zwraca…", "answers": ["NaN", "true", "false", "undefined"], "correct": 1 },
+    { "text": "Która kolekcja przechowuje unikalne wartości?", "answers": ["Array", "Set", "Map", "WeakMap"], "correct": 1 },
+    { "text": "async function zwraca zawsze…", "answers": ["Promise", "boolean", "undefined", "string"], "correct": 0 }
+  ]
